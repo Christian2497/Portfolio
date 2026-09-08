@@ -1,16 +1,21 @@
-import React, { Component } from 'react';
 import './Sidebar.css';
 import { HashLink as Link } from 'react-router-hash-link';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
-import logo from '../images/sam.png';
+import logo from '../images/perfil.jpg';
 import github from '../images/github.png';
-import instagram from '../images/instagram.png';
 import twitter from '../images/twitterx.png';
 import linkedin from '../images/linkedin.png';
 import gmail from '../images/gmail.png';
 
 export default function Sidebar() {
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
+  
   const container = {
     hidden: { opacity: 1, scale: 0 },
     visible: {
@@ -25,23 +30,19 @@ export default function Sidebar() {
   const iconList = [
     {
       component: github,
-      href: 'https://github.com/mittalsam98'
+      href: 'https://github.com/Christian2497'
     },
     {
       component: linkedin,
-      href: 'https://www.linkedin.com/in/sachin-mittal-476174158?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BoRhF2EUsQJ%2BygJpLEZb%2FFA%3D%3D'
+      href: 'https://www.linkedin.com/in/christian-hernandez-heras'
     },
     {
       component: twitter,
-      href: 'https://twitter.com/Sachin_Mittal98'
-    },
-    {
-      component: instagram,
-      href: 'https://www.instagram.com/decent_sachin.mittal'
+      href: 'https://x.com/TheKnebep9'
     },
     {
       component: gmail,
-      href: 'mailto:mittalsam98@gmail.com'
+      href: 'mailto:christian_8_neus@hotmail.com'
     }
   ];
   const item = {
@@ -54,12 +55,25 @@ export default function Sidebar() {
 
   return (
     <div className='sidebar'>
-      <div className='topHashtag'># programmer_life</div>
-      <div className='topHashtag'># hello_world</div>
-      <div className='topHashtag'># coding</div>
+      {/* SECCIÓN CAMBIO DE IDIOMA */}
+      <div className="lang-switcher" style={{ marginBottom: '10px', display: 'flex', gap: '10px', justifyContent: 'center' }}>
+        <button 
+          onClick={() => changeLanguage('es')} 
+          style={{ fontWeight: i18n.language === 'es' ? 'bold' : 'normal', cursor: 'pointer', background: 'none', border: 'none' }}
+        >
+          Español
+        </button>
+        |
+        <button 
+          onClick={() => changeLanguage('en')} 
+          style={{ fontWeight: i18n.language === 'en' ? 'bold' : 'normal', cursor: 'pointer', background: 'none', border: 'none' }}
+        >
+          English
+        </button>
+      </div>
       <h1>
         <Link smooth to='/#start' className='h1_links'>
-          Sachin Mittal
+          Christian Hernández Heras
         </Link>
       </h1>
       <motion.div
@@ -75,28 +89,28 @@ export default function Sidebar() {
           target='_blank'
           className='fa fa-envelope'
         ></a>
-        &nbsp;mittalsam98@gmail.com
+        &nbsp;christian_8_neus@hotmail.com
       </p>
 
       <ul className='sidebar-nav'>
         <li className='sidebar-nav-items'>
           <Link smooth to='/#projects' className='links'>
-            Projects
+            {t('sidebar.projects')}
           </Link>
         </li>
         <li className='sidebar-nav-items'>
           <Link smooth to='/#about' className='links'>
-            About
+            {t('sidebar.about')}
           </Link>
         </li>
         <li className='sidebar-nav-items'>
           <Link smooth to='/#interest' className='links'>
-            Interest
+            {t('sidebar.interest')}
           </Link>
         </li>
         <li className='sidebar-nav-items'>
           <Link smooth to='/#education' className='links'>
-            Education
+            {t('sidebar.education')}
           </Link>
         </li>
       </ul>
@@ -116,24 +130,6 @@ export default function Sidebar() {
           ))}
         </motion.ul>
       </div>
-      <div
-        style={{
-          color: 'black',
-          fontWeight: 'bold',
-          paddingTop: '20%'
-        }}
-        className='tagtop'
-      >
-        Made with <a href='#' className='fa fa-heart heart'></a> by me.
-      </div>
-      <button
-        onClick={() => {
-          window.open('https://github.com/mittalsam98/react-portfolio', '_blank');
-        }}
-        className='templateTextBtn'
-      >
-        Use this template
-      </button>
     </div>
   );
 }

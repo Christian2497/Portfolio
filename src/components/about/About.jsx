@@ -3,30 +3,19 @@ import classes from './About.module.css';
 // import ScrollAnimation from 'react-animate-on-scroll';
 import 'animate.css/animate.min.css';
 
+import { withTranslation, Trans } from 'react-i18next';
+
 class About extends Component {
   render() {
+    const { t } = this.props;
+
     return (
       <div className={classes.box} id='about'>
-        {/* <ScrollAnimation
-          offset={0}
-          animateIn='fadeInLeft'
-          duration={2.4}
-          animateOnce={true}
-          initiallyVisible={true}
-        > */}
-        <span className={classes.head}>ABOUT ME</span>
-        <h2 className={classes.heading}>Who Am I?</h2>
+        <span className={classes.head}>{t('about.title')}</span>
+        <h2 className={classes.heading}>{t('about.head')}</h2>
         <div className={classes.About}>
           <p>
-            Hi! My name is <b>SACHIN MITTAL</b>. I am a passionate developer having experience in{' '}
-            <b>Frontend development</b> & <b>Mobile App development </b>  complemented by backend expertise and I am much interested in developing new things
-            which excite me a lot. :)
-          </p>
-          <p className={classes.br}>
-            I love exploring new technologies and being a practitioner, I like to stay on top of
-            latest trends. I try to leave every line of code I write more readable, accessible, and
-            modular. My problem-solving mindset and active GitHub profile showcase my commitment to
-            innovative and collaborative coding.
+             <Trans i18nKey="about.description" components={{ b: <b /> }} />
           </p>
         </div>
         {/* </ScrollAnimation> */}
@@ -35,4 +24,4 @@ class About extends Component {
   }
 }
 
-export default About;
+export default withTranslation()(About);

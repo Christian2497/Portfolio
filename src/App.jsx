@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import './i18n';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Sidebar from './components/sidebar/Sidebar.jsx';
 import About from './components/about/About.jsx';

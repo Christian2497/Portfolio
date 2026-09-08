@@ -2,19 +2,15 @@ import React, { Component } from 'react';
 import classes from './Interest.module.css';
 // import ScrollAnimation from 'react-animate-on-scroll';
 import 'animate.css/animate.min.css';
+import { useTranslation } from 'react-i18next';
 
 export default function Interest() {
+  const { t } = useTranslation();
+
   return (
     <div className={classes.box} id='interest'>
-      {/* <ScrollAnimation
-        offset={0}
-        animateIn='fadeInLeft'
-        duration={2.4}
-        animateOnce={true}
-        initiallyVisible={true}
-      > */}
-      <span className={classes.head}>WHAT I DO?</span>
-      <h2 className={classes.heading}>HERE ARE SOME OF MY EXPERTISE</h2>
+      <span className={classes.head}>{t('interest.title')}</span>
+      <h2 className={classes.heading}>{t('interest.head')}</h2>
       <div className={classes.Interest}>
         {/* <ScrollAnimation
             offset={0}
@@ -23,13 +19,13 @@ export default function Interest() {
             animateOnce={true}
             initiallyVisible={true}
           > */}
-        <div className={classes.web}>
+        {/* <div className={classes.web}>
           <h3>APP Develpoment</h3>
           <p>
             I have knowledge of flutter development and have experience in building android and IOS
             applications. I also have live projects published on Google Play Store.
           </p>
-        </div>
+        </div> */}
         {/* </ScrollAnimation>
           <ScrollAnimation
             offset={0}
@@ -38,12 +34,11 @@ export default function Interest() {
             animateOnce={true}
             initiallyVisible={true}
           > */}
-        <div className={classes.app}>
+        <div className={classes.web}>
           <h3>Web Development</h3>
           <p>
-            Javascript/ Typescript, HTML/ CSS, ReactJs, Next.js, Prisma, tRPC, ZOD, Redux, Tailwind
-            CSS, UI Libraries (React-Bootstrap, Mantine, MUI, Shadcn UI), Redux Toolkit, T3 Stack,
-            JEST, Drizzle, Unit Testing.
+            Javascript/ Typescript, HTML/ CSS, ReactJs, VueJs, Next.js, .Net, Redux, Tailwind
+            CSS, UI Libraries (React-Bootstrap, MUI, Shadcn UI), Unit Testing.
           </p>
         </div>
         {/* </ScrollAnimation>
@@ -57,8 +52,8 @@ export default function Interest() {
         <div className={classes.other}>
           <h3>Expanded Expertise</h3>
           <p>
-            AWS, Docker, GitHub, Frontend System Design, Express.js, Node.js, MongoDB, MERN Stack,
-            SQL, NOSQL, Socket.io, jQuery, Open to Monorepo architecture, Open Source Contribution, Learning Web3
+            AWS, Docker, GitHub, Frontend System Design, Express.js, Node.js, MongoDB,
+            SQL, Socket.io, jQuery
           </p>
         </div>
         {/* </ScrollAnimation> */}

@@ -12,7 +12,7 @@ code {
 }
 
 .App {
-  height: 710px;
+  height: 600px;
   display: grid;
   grid-template-columns: 1fr 4fr;
   font-family: 'Quicksand', Arial, sans-serif;
