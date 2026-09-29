@@ -62,7 +62,7 @@ class Education extends Component {
                         </div>
                       </div>
                       <div className={classes.paraWithSubheading}>
-                      <div className={classes.subHeading}> INET (09/2018 - 07/2019) </div>
+                      <div className={classes.subHeading}> INET (09/2017 - 07/2018) </div>
                         <div className={classes.points}>
                           <div className={classes.description}>
                             {t('education.inetDescription')}
