@@ -24,7 +24,7 @@ class Education extends Component {
                     </div>
                     <div className={classes.label}>
                       <div className={classes.paraWithSubheading}>
-                        <div className={classes.subHeading}> {t('education.silenceRole')} <i> (11/2025 - 07/2026) </i> </div>
+                        <div className={classes.subHeading}> {t('education.silenceRole')} (11/2025 - 07/2026) </div>
                         <div className={classes.points}>
                           <div className={classes.description}>
                             {t('education.silenceDesc1')}
@@ -62,7 +62,7 @@ class Education extends Component {
                         </div>
                       </div>
                       <div className={classes.paraWithSubheading}>
-                      <div className={classes.subHeading}> INET (09/2018 - 07/2018) </div>
+                      <div className={classes.subHeading}> INET (09/2018 - 07/2019) </div>
                         <div className={classes.points}>
                           <div className={classes.description}>
                             {t('education.inetDescription')}
@@ -95,12 +95,12 @@ class Education extends Component {
                     </div>
                     <div className={classes.label}>
                       <h2>
-                        {t('education.culturalRole')} <span>09/2018 - 08/2019</span>
+                        {t('education.deustoRole')} <span>09/2018 - 08/2019</span>
                       </h2>
                     </div>
                     <div className={classes.label}>
                       <h2>
-                        {t('education.deustoRole')} <span>09/2015 - 06/2017</span>
+                        {t('education.culturalRole')} <span>09/2015 - 06/2017</span>
                       </h2>
                     </div>
                   </article>
